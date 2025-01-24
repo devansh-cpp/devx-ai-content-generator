@@ -20,9 +20,9 @@ interface PROPS{
     }
 }
 
-function CreateNewContent(props:PROPS) {
+function CreateNewContent({params}:PROPS) {
 
-    const selectedTemplate:TEMPLATE|undefined=Templates?.find((item)=>item.slug==props.params['template-slug'])
+    const selectedTemplate:TEMPLATE|undefined=Templates?.find((item)=>item.slug==params['template-slug'])
     const [loading, setLoading] = useState(false)
     const[aiOutput,setAiOutput] = useState<any>('')
     const {user}=useUser()
